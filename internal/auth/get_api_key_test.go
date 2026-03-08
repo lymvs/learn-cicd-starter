@@ -27,7 +27,7 @@ func TestGetAPIKeyValid(t *testing.T) {
 }
 
 func TestGetAPIKeyInvalid(t *testing.T) {
-	headers := http.Header()
+	headers := http.Header{}
 	headers.Add("Authorization", "testKey")
 	_, got := GetAPIKey(headers)
 	want := "malformed authorization header"
